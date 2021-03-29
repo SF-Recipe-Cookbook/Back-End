@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://cookbook:cookbook@cookbook.9zhxv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://cookbook:testpassword@cookbook.9zhxv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     "jwtSecret": "9.?2P4]|g@xwponyjdDQdkbQk<UzN^"
 }
