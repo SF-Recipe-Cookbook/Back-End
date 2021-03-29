@@ -22,7 +22,7 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { username, email, password, image } = req.body;
+    const { username, email, password, avatar } = req.body;
 
     try {
       // can use username etc....
@@ -34,7 +34,7 @@ router.post(
         username,
         email,
         password,
-        image,
+        avatar,
       });
 
       const salt = await bcrypt.genSalt(10);
