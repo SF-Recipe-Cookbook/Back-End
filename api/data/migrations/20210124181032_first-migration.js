@@ -1,14 +1,14 @@
 exports.up = async (knex) => {
   await knex.schema.createTable('users', (users) => {
     users.increments('id');
-    users.string('username', 200).notNullable();
+    users.string('username', 200).notNullable().unique();
     users.string('password', 200).notNullable();
-    users.string('email', 320).notNullable();
+    users.string('email', 320).notNullable().unique();
     users.timestamps(false, true);
   });
   await knex.schema.createTable('recipes', (recipes) => {
     recipes.increments('id');
-    recipes.string('name', 200).notNullable();
+    recipes.string('name', 200).notNullable().unique();
     recipes.string('category', 200).notNullable();
     recipes.text('description').notNullable();
     recipes.text('ingredients').notNullable();
