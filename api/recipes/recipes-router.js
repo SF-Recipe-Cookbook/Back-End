@@ -1,7 +1,7 @@
 const express = require('express');
 const Recipes = require('./recipes-model');
 const router = express.Router();
-const restricted = require('../auth/restricted-middleware');
+const restricted = require('../auth/restricted-middleware.js');
 
 router.get('/', (req, res, next) => {
   Recipes.get(req.query)

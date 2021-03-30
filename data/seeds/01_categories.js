@@ -5,6 +5,6 @@ exports.seed = function (knex) {
     { name: 'Dinner' },
     { name: 'Snacks' },
     { name: 'Drinks' },
-    { name: 'Dessert' },
+    { name: 'Desert' },
   ]);
 };
