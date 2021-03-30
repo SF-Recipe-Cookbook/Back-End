@@ -9,6 +9,12 @@ const RecipeSchema = new mongoose.Schema(
       trim: true,
       maxlength: [50, 'Recipe name can not be more than 50 characters'],
     },
+    recipe_source: {
+      type: String,
+      required: [true, 'Recipe source required'],
+      trim: true,
+      maxlength: [50, 'Recipe source can not be more than 50 characters'],
+    },
     category: {
       // Array of strings
       type: [String],

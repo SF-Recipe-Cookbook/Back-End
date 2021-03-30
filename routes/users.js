@@ -5,7 +5,6 @@ const {
   createUser,
   updateUser,
   deleteUser,
-  userPhotoUpload,
 } = require('../controllers/users');
 
 const User = require('../models/User');
@@ -17,9 +16,7 @@ const { protect } = require('../middleware/auth');
 
 router.use(protect);
 
-router.route('/:id/photo').put(protect, userPhotoUpload);
-
-router.route('/').get(advancedResults(User), getUsers).post(createUser);
+// router.route('/').get(advancedResults(User), getUsers).post(createUser);
 
 router.route('/:id').get(getUser).put(updateUser).delete(deleteUser);
 

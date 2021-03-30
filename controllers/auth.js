@@ -8,11 +8,12 @@ const User = require('../models/User');
 // @route     POST /api/auth/register
 // @access    Public
 exports.register = asyncHandler(async (req, res, next) => {
-  const { username, email, password, avatar } = req.body;
+  const { username, name, email, password, avatar } = req.body;
 
   // Create user
   const user = await User.create({
     username,
+    name,
     email,
     password,
     avatar,
@@ -152,7 +153,7 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
   // Create reset url
   const resetUrl = `${req.protocol}://${req.get(
     'host'
-  )}/api/v1/auth/resetpassword/${resetToken}`;
+  )}/api/auth/resetpassword/${resetToken}`;
 
   const message = `You are receiving this email because you (or someone else) has requested the reset of a password: \n\n ${resetUrl}`;
 

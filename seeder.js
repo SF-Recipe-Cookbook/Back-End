@@ -7,8 +7,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: './config/config.env' });
 
 // Load models
-const Bootcamp = require('./models/Bootcamp');
-const Course = require('./models/Course');
+const Recipe = require('./models/Recipe');
 const User = require('./models/User');
 const Review = require('./models/Review');
 
@@ -17,16 +16,12 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 
 // Read JSON files
-const bootcamps = JSON.parse(
-  fs.readFileSync(`${__dirname}/_data/bootcamps.json`, 'utf-8')
-);
-
-const courses = JSON.parse(
-  fs.readFileSync(`${__dirname}/_data/courses.json`, 'utf-8')
+const recipes = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/recipes.json`, 'utf-8')
 );
 
 const users = JSON.parse(
@@ -40,8 +35,7 @@ const reviews = JSON.parse(
 // Import into DB
 const importData = async () => {
   try {
-    await Bootcamp.create(bootcamps);
-    await Course.create(courses);
+    await Recipe.create(recipes);
     await User.create(users);
     await Review.create(reviews);
     console.log('Data Imported...'.green.inverse);
@@ -54,8 +48,7 @@ const importData = async () => {
 // Delete data
 const deleteData = async () => {
   try {
-    await Bootcamp.deleteMany();
-    await Course.deleteMany();
+    await Recipe.deleteMany();
     await User.deleteMany();
     await Review.deleteMany();
     console.log('Data Destroyed...'.red.inverse);
