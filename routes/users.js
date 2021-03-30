@@ -1,68 +1,23 @@
 const express = require('express');
-const router = express.Router();
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const config = require('config');
-const { check, validationResult } = require('express-validator');
+const {
+  getUsers,
+  getUser,
+  createUser,
+  updateUser,
+  deleteUser,
+} = require('../controllers/users');
 
 const User = require('../models/User');
 
-// @route        POST /api/users
-// @description  Register a user
-// @access       Public
-router.post(
-  '/',
-  [
-    check('username', 'username required').not().isEmpty(),
-    check('email', 'valid email required').isEmail(),
-    check('password', 'required 6 characters or more').isLength({ min: 6 }),
-  ],
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-    const { username, email, password, avatar } = req.body;
+const router = express.Router({ mergeParams: true });
 
-    try {
-      // can use username etc....
-      let user = await User.findOne({ username });
-      if (user) {
-        return res.status(400).json({ msg: 'User already exists' });
-      }
-      user = new User({
-        username,
-        email,
-        password,
-        avatar,
-      });
+const advancedResults = require('../middleware/advancedResults');
+const { protect } = require('../middleware/auth');
 
-      const salt = await bcrypt.genSalt(10);
-      user.password = await bcrypt.hash(password, salt);
-      await user.save();
+router.use(protect);
 
-      const payload = {
-        user: {
-          id: user.id,
-        },
-      };
+router.route('/').get(advancedResults(User), getUsers).post(createUser);
 
-      jwt.sign(
-        payload,
-        config.get('jwtSecret'),
-        {
-          expiresIn: 3600,
-        },
-        (err, token) => {
-          if (err) throw err;
-          res.json({ token });
-        }
-      );
-    } catch (err) {
-      console.error(err.message);
-      res.status(500).send('Server error');
-    }
-  }
-);
+router.route('/:id').get(getUser).put(updateUser).delete(deleteUser);
 
 module.exports = router;
