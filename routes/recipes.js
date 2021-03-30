@@ -23,7 +23,10 @@ router.use('/:recipeId/reviews', reviewRouter);
 
 router.route('/:id/photo').put(protect, recipePhotoUpload);
 
-router.route('/').get(getRecipes).post(protect, createRecipe);
+router
+  .route('/')
+  .get(advancedResults(Recipe), getRecipes)
+  .post(protect, createRecipe);
 
 router
   .route('/:id')

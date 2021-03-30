@@ -28,7 +28,7 @@ const UserSchema = new mongoose.Schema({
     minlength: 6,
     select: false,
   },
-  photo: {
+  avatar: {
     type: String,
     default: 'no-photo.jpg',
   },
