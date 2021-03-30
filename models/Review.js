@@ -21,7 +21,7 @@ const ReviewSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  bootcamp: {
+  recipe: {
     type: mongoose.Schema.ObjectId,
     ref: 'Recipe',
     required: true,
