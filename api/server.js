@@ -1,10 +1,23 @@
-const express = require('express')
-const helmet = require('helmet')
-const cors = require('cors')
+const express = require('express');
+const helmet = require('helmet');
+const cors = require('cors');
 
-const server = express()
-server.use(express.json())
-server.use(helmet())
-server.use(cors())
+const authRouter = require('./auth/auth-router');
+const usersRouter = require('./users/users-router');
+const recipesRouter = require('./recipes/recipes-router');
 
-module.exports = server
+const server = express();
+
+server.use(helmet());
+server.use(express.json());
+server.use(cors());
+
+server.use('/api/auth', authRouter);
+server.use('/api/users', usersRouter);
+server.use('/api/recipes', recipesRouter);
+
+server.get('/', (req, res) => {
+  res.json({ api: 'up', environment: process.env.NODE_ENV });
+});
+
+module.exports = server;

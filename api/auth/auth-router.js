@@ -58,7 +58,7 @@ function generateToken(user) {
     role: user.role,
   };
   const options = {
-    expiresIn: 5000,
+    expiresIn: 3600,
   };
 
   return jwt.sign(payload, jwtSecret, options);

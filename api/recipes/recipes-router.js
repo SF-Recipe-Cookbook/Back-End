@@ -1,10 +1,10 @@
 const express = require('express');
-const Posts = require('./recipes-model');
+const Recipes = require('./recipes-model');
 const router = express.Router();
-const restricted = require('../auth/restricted-middleware.js');
+const restricted = require('../auth/restricted-middleware');
 
 router.get('/', (req, res, next) => {
-  Posts.get(req.query)
+  Recipes.get(req.query)
     .then((recipes) => {
       res.status(200).json(recipes);
     })
@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res) => {
-  Posts.getById(req.params.id)
+  Recipes.getById(req.params.id)
     .then((recipe) => {
       res.status(200).json(recipe);
     })
@@ -24,7 +24,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.get('/user/:id', restricted, (req, res) => {
-  Posts.getUserRecipes(req.params.id)
+  Recipes.getUserRecipes(req.params.id)
     .then((recipes) => {
       res.json(recipes);
     })
@@ -32,7 +32,7 @@ router.get('/user/:id', restricted, (req, res) => {
 });
 
 router.post('/', restricted, (req, res, next) => {
-  Posts.insert(req.body)
+  Recipes.insert(req.body)
     .then((newRecipe) => {
       res.status(200).json(newRecipe);
     })
@@ -42,7 +42,7 @@ router.post('/', restricted, (req, res, next) => {
 });
 
 router.delete('/:id', restricted, (req, res, next) => {
-  Posts.remove(req.params.id)
+  Recipes.remove(req.params.id)
     .then(() => {
       res.status(200).json({ message: 'the recipe has been deleted' });
     })
@@ -52,7 +52,7 @@ router.delete('/:id', restricted, (req, res, next) => {
 });
 
 router.put('/:id', restricted, (req, res, next) => {
-  Posts.update(req.params.id, req.body)
+  Recipes.update(req.params.id, req.body)
     .then(() => {
       res.status(200).json(req.body);
     })
