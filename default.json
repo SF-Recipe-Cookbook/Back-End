@@ -1,4 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://cookbook:testpassword@cookbook.9zhxv.mongodb.net/WebRecipeDatabase?retryWrites=true&w=majority",
-    "jwtSecret": "9.?2P4]|g@xwponyjdDQdkbQk<UzN^"
-}
