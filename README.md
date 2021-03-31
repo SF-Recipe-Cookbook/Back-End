@@ -37,13 +37,7 @@
 ```bash
 Method: DELETE
 Type: 
-<<<<<<< HEAD
 URL: /api/recipes/:id
-=======
-URL: {{URL}}/api/recipes/:id
->>>>>>> 81474399e2bcc5245ed4279378e74a254b8446cd
-```
-
 
 ***Headers:***
 
@@ -93,13 +87,7 @@ URL: /api/recipes/
 ```bash
 Method: GET
 Type: 
-<<<<<<< HEAD
 URL: /api/recipes/:id
-=======
-URL: {{URL}}/api/recipes/:id
->>>>>>> 81474399e2bcc5245ed4279378e74a254b8446cd
-```
-
 
 ***Headers:***
 
@@ -127,13 +115,8 @@ URL: {{URL}}/api/recipes/:id
 ```bash
 Method: GET
 Type: 
-<<<<<<< HEAD
 URL: /api/recipes/user/:id
 =======
-URL: {{URL}}/api/recipes/user/:id
->>>>>>> 81474399e2bcc5245ed4279378e74a254b8446cd
-```
-
 
 ***Headers:***
 
@@ -199,14 +182,8 @@ URL: /api/recipes/
 
 ```bash
 Method: PUT
-Type: RAW
-<<<<<<< HEAD
+Type: 
 URL: /api/recipes/:id
-=======
-URL: {{URL}}/api/recipes/:id
->>>>>>> 81474399e2bcc5245ed4279378e74a254b8446cd
-```
-
 
 ***Headers:***
 
@@ -331,4 +308,4 @@ URL: /api/auth/
 
 ---
 [Back to top](#sf-recipe-cookbook)
-> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2021-03-30 23:45:56 by [docgen](https://github.com/thedevsaddam/docgen)
+
