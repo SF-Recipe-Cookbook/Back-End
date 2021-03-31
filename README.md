@@ -37,7 +37,7 @@
 ```bash
 Method: DELETE
 Type: 
-URL: {{URL}}/api/recipes/6063fd01bbe71f1cf4684125
+URL: {{URL}}/api/recipes/:id
 ```
 
 
@@ -81,7 +81,7 @@ URL: {{URL}}/api/recipes/
 ```bash
 Method: GET
 Type: 
-URL: {{URL}}/api/recipes/2
+URL: {{URL}}/api/recipes/:id
 ```
 
 
@@ -103,7 +103,7 @@ URL: {{URL}}/api/recipes/2
 ```bash
 Method: GET
 Type: 
-URL: {{URL}}/api/recipes/user/2
+URL: {{URL}}/api/recipes/user/:id
 ```
 
 
@@ -164,7 +164,7 @@ URL: {{URL}}/api/recipes/
 ```bash
 Method: PUT
 Type: RAW
-URL: {{URL}}/api/recipes/6063fd01bbe71f1cf4684125
+URL: {{URL}}/api/recipes/:id
 ```
 
 
