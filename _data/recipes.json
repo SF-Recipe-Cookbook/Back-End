@@ -1,0 +1,36 @@
+[
+    {
+        "ingredients": [
+            "test, test, test"
+        ],
+        "instructions": [
+            "blah blah blah"
+        ],
+        "_id": "6063f4dce58f7434e042152a",
+        "name": "Testing3",
+        "description": "testing3",
+        "category": "Dinner",
+        "prep_time": 10,
+        "cook_time": 12,
+        "image_url": "http://test.com/test",
+        "user": "6063e992c6bc8b19f0bd6154",
+        "date": "2021-03-31T04:04:44.712Z"
+},
+{
+        "ingredients": [
+            "test, test, test"
+        ],
+        "instructions": [
+            "blah blah blah"
+        ],
+        "_id": "6063f5e62d00f21d9461488d",
+        "name": "Testing3",
+        "description": "testing3",
+        "category": "Dinner",
+        "prep_time": 10,
+        "cook_time": 12,
+        "image_url": "http://test.com/test",
+        "user": "6063e992c6bc8b19f0bd6154",
+        "date": "2021-03-31T04:04:44.712Z"
+}
+]

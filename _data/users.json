@@ -1,0 +1,20 @@
+[
+    {
+    "_id": "6063e992c6bc8b19f0bd6154",
+    "username": "tester3",
+    "name": "test tester",
+    "email": "test3@gmail.com",
+    "password": "password",
+    "avatar": "http://test.com/test",
+    "date": "2021-03-31T03:16:34.918Z"
+},
+{
+    "_id": "6063f5e62d00f21d9461488d",
+    "username": "tester4",
+    "name": "test tester4",
+    "email": "test4@gmail.com",
+    "password": "password",
+    "avatar": "http://test.com/test",
+    "date": "2021-03-31T04:09:10.216Z"
+}
+]
