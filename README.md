@@ -37,7 +37,7 @@
 ```bash
 Method: DELETE
 Type: 
-URL: {{URL}}/api/recipes/6063fd01bbe71f1cf4684125
+URL: /api/recipes/:id
 ```
 
 
@@ -50,6 +50,14 @@ URL: {{URL}}/api/recipes/6063fd01bbe71f1cf4684125
 
 
 
+***URL variables:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
 ### 2. Get all recipes
 
 
@@ -59,7 +67,7 @@ URL: {{URL}}/api/recipes/6063fd01bbe71f1cf4684125
 ```bash
 Method: GET
 Type: 
-URL: {{URL}}/api/recipes/
+URL: /api/recipes/
 ```
 
 
@@ -81,7 +89,7 @@ URL: {{URL}}/api/recipes/
 ```bash
 Method: GET
 Type: 
-URL: {{URL}}/api/recipes/2
+URL: /api/recipes/:id
 ```
 
 
@@ -91,6 +99,14 @@ URL: {{URL}}/api/recipes/2
 | --- | ------|-------------|
 | Content-Type | application/json |  |
 | x-auth-token | {{TOKEN}} |  |
+
+
+
+***URL variables:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
 
 
 
@@ -103,7 +119,7 @@ URL: {{URL}}/api/recipes/2
 ```bash
 Method: GET
 Type: 
-URL: {{URL}}/api/recipes/user/2
+URL: /api/recipes/user/:id
 ```
 
 
@@ -116,6 +132,14 @@ URL: {{URL}}/api/recipes/user/2
 
 
 
+***URL variables:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
+
+
+
 ### 5. Post new recipe
 
 
@@ -125,7 +149,7 @@ URL: {{URL}}/api/recipes/user/2
 ```bash
 Method: POST
 Type: RAW
-URL: {{URL}}/api/recipes/
+URL: /api/recipes/
 ```
 
 
@@ -164,7 +188,7 @@ URL: {{URL}}/api/recipes/
 ```bash
 Method: PUT
 Type: RAW
-URL: {{URL}}/api/recipes/6063fd01bbe71f1cf4684125
+URL: /api/recipes/:id
 ```
 
 
@@ -174,6 +198,14 @@ URL: {{URL}}/api/recipes/6063fd01bbe71f1cf4684125
 | --- | ------|-------------|
 | Content-Type | application/json |  |
 | x-auth-token | {{TOKEN}} |  |
+
+
+
+***URL variables:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| id |  |  |
 
 
 
@@ -201,7 +233,7 @@ URL: {{URL}}/api/recipes/6063fd01bbe71f1cf4684125
 ```bash
 Method: GET
 Type: 
-URL: {{URL}}/api/auth/
+URL: /api/auth/
 ```
 
 
@@ -223,7 +255,7 @@ URL: {{URL}}/api/auth/
 ```bash
 Method: POST
 Type: RAW
-URL: {{URL}}/api/users/
+URL: /api/users/
 ```
 
 
@@ -258,7 +290,7 @@ URL: {{URL}}/api/users/
 ```bash
 Method: POST
 Type: RAW
-URL: {{URL}}/api/auth/
+URL: /api/auth/
 ```
 
 
@@ -283,4 +315,4 @@ URL: {{URL}}/api/auth/
 
 ---
 [Back to top](#sf-recipe-cookbook)
-> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2021-03-30 23:30:28 by [docgen](https://github.com/thedevsaddam/docgen)
+> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2021-03-30 23:45:56 by [docgen](https://github.com/thedevsaddam/docgen)
