@@ -7,9 +7,22 @@ const User = require('../models/User');
 const Recipe = require('../models/Recipe');
 
 // @route        GET /api/recipes
+// @description  Get all recipes
+// @access       Public
+router.get('/', async (req, res) => {
+  try {
+    const recipes = await Recipe.find({});
+    res.json(recipes);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
+// @route        GET /api/recipes/user
 // @description  Get all users recipes
 // @access       Private
-router.get('/', auth, async (req, res) => {
+router.get('/user', auth, async (req, res) => {
   try {
     const recipes = await Recipe.find({ user: req.user.id }).sort({
       date: -1,
