@@ -33,8 +33,8 @@ router.get('/user/:id', restricted, (req, res) => {
 
 router.post('/', restricted, (req, res, next) => {
   Recipes.insert(req.body)
-    .then((newRecipe) => {
-      res.status(200).json(newRecipe);
+    .then((recipe) => {
+      res.status(200).json(recipe);
     })
     .catch((error) => {
       res.status(400).json(error.message);

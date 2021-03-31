@@ -23,19 +23,18 @@ function get() {
 }
 
 function getById(id) {
-  return db('recipes as p')
-    .join('users as u', 'u.id', 'p.user_id')
-    .join('category as c', 'c.id', 'p.category_id')
+  return db('recipes as r')
+    .join('users as u', 'u.id', 'r.user_id')
+    .join('category as c', 'c.id', 'r.category_id')
     .select(
-      'p.id',
+      'r.id',
       'c.name as category',
-      'p.name',
-      'p.image_url',
-      'p.description',
+      'r.name',
+      'r.image_url',
+      'r.description',
       'u.username'
     )
-    .where('p.id', id)
-    .first();
+    .where('r.id', id);
 }
 
 function getUserRecipes(id) {
@@ -59,8 +58,8 @@ function getUserRecipes(id) {
 function insert(recipe) {
   return db('recipes')
     .insert(recipe)
-    .then((id) => {
-      return getById(id[0]);
+    .then((ids) => {
+      return getById(ids[0]);
     });
 }
 

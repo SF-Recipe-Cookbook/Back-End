@@ -14,7 +14,7 @@ exports.up = function (knex) {
         .integer('role_id')
         .unsigned()
         .references('roles.id')
-        .onDelete('RESTRICT')
+        .onDelete('CASCADE')
         .onUpdate('CASCADE')
         .defaultTo(2);
     })
@@ -28,18 +28,18 @@ exports.up = function (knex) {
         .integer('user_id')
         .unsigned()
         .references('users.id')
-        .onDelete('RESTRICT')
+        .onDelete('CASCADE')
         .onUpdate('CASCADE');
       tbl
         .integer('category_id')
         .unsigned()
         .references('category.id')
-        .onDelete('RESTRICT')
+        .onDelete('CASCADE')
         .onUpdate('CASCADE');
       tbl.string('name', 256).notNullable();
       tbl.string('description', 256).notNullable();
-      tbl.string('ingredients', 256).notNullable();
-      tbl.string('instructions', 256).notNullable();
+      tbl.specificType('ingredients', 'text[]').notNullable();
+      tbl.specificType('instructions', 'text[]').notNullable();
       tbl.integer('prep_time').notNullable();
       tbl.integer('cook_time').notNullable();
       tbl.string('image_url', 256);
