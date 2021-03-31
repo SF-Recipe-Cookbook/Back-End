@@ -37,7 +37,11 @@
 ```bash
 Method: DELETE
 Type: 
+<<<<<<< HEAD
 URL: /api/recipes/:id
+=======
+URL: {{URL}}/api/recipes/:id
+>>>>>>> 81474399e2bcc5245ed4279378e74a254b8446cd
 ```
 
 
@@ -89,7 +93,11 @@ URL: /api/recipes/
 ```bash
 Method: GET
 Type: 
+<<<<<<< HEAD
 URL: /api/recipes/:id
+=======
+URL: {{URL}}/api/recipes/:id
+>>>>>>> 81474399e2bcc5245ed4279378e74a254b8446cd
 ```
 
 
@@ -119,7 +127,11 @@ URL: /api/recipes/:id
 ```bash
 Method: GET
 Type: 
+<<<<<<< HEAD
 URL: /api/recipes/user/:id
+=======
+URL: {{URL}}/api/recipes/user/:id
+>>>>>>> 81474399e2bcc5245ed4279378e74a254b8446cd
 ```
 
 
@@ -188,7 +200,11 @@ URL: /api/recipes/
 ```bash
 Method: PUT
 Type: RAW
+<<<<<<< HEAD
 URL: /api/recipes/:id
+=======
+URL: {{URL}}/api/recipes/:id
+>>>>>>> 81474399e2bcc5245ed4279378e74a254b8446cd
 ```
 
 
