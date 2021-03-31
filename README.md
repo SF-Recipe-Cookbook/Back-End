@@ -110,7 +110,7 @@ URL: /api/recipes/:id
 
 
 
-### 4. Get user recipe
+### 4. Get logged in users recipes
 
 
 
