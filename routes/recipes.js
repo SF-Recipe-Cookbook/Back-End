@@ -6,10 +6,23 @@ const { check, validationResult } = require('express-validator');
 const User = require('../models/User');
 const Recipe = require('../models/Recipe');
 
-// @route        GET /api/recipes
+// @route        GET /api/recipe
 // @description  Get all recipes
 // @access       Public
 router.get('/', async (req, res) => {
+  try {
+    const recipes = await Recipe.find({});
+    res.json(recipes);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
+// @route        GET /api/user/recipe
+// @description  Get all recipes
+// @access       Public
+router.get('/user/recipe/:id', async (req, res) => {
   try {
     const recipes = await Recipe.find({ id });
     res.json(recipes);
