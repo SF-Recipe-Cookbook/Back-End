@@ -15,6 +15,7 @@ router.get('/', auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
     res.json(user);
+    console.log(user);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -53,10 +54,11 @@ router.post(
 
       const payload = {
         user: {
-          id: user.id,
+          id: user._id,
         },
       };
 
+      console.log(payload);
       jwt.sign(
         payload,
         config.get('jwtSecret'),
@@ -66,6 +68,7 @@ router.post(
         (err, token) => {
           if (err) throw err;
           res.json({ token });
+          res.json({ payload });
         }
       );
     } catch (err) {

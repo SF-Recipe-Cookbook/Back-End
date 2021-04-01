@@ -41,20 +41,20 @@ router.post(
   '/',
   [
     auth,
-    [
-      check('name', 'Name is required').not().isEmpty(),
-      check('description', 'Description is required').not().isEmpty(),
-      check('ingredients', 'Ingredients are required').not().isEmpty(),
-      check('instructions', 'Instructions are required').not().isEmpty(),
-      check('prep_time', 'Prep time required').not().isEmpty(),
-      check('cook_time', 'Cook time is required').not().isEmpty(),
-    ],
+    // [
+    //   check('name', 'Name is required').not().isEmpty(),
+    //   check('description', 'Description is required').not().isEmpty(),
+    //   check('ingredients', 'Ingredients are required').not().isEmpty(),
+    //   check('instructions', 'Instructions are required').not().isEmpty(),
+    //   check('prep_time', 'Prep time required').not().isEmpty(),
+    //   check('cook_time', 'Cook time is required').not().isEmpty(),
+    // ],
   ],
   async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+    // const errors = validationResult(req);
+    // if (!errors.isEmpty()) {
+    //   return res.status(400).json({ errors: errors.array() });
+    // }
 
     const {
       name,
