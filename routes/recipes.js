@@ -11,7 +11,7 @@ const Recipe = require('../models/Recipe');
 // @access       Public
 router.get('/', async (req, res) => {
   try {
-    const recipes = await Recipe.find({});
+    const recipes = await Recipe.find({ id });
     res.json(recipes);
   } catch (err) {
     console.error(err.message);
