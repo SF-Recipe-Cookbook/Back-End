@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 // @route        GET /api/user/recipe
 // @description  Get all recipes
 // @access       Public
-router.get('/user/recipe/:id', async (req, res) => {
+router.get('/recipes/update/:id', async (req, res) => {
   try {
     const recipes = await Recipe.find({ id });
     res.json(recipes);
