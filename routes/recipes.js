@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 // @access       Public
 router.get('/recipes/update/:id', async (req, res) => {
   try {
-    const recipes = await Recipe.findById({ id });
+    const recipes = await Recipe.findById(req.params.id);
     res.json(recipes);
   } catch (err) {
     console.error(err.message);
